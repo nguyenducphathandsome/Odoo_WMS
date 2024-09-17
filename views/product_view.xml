@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+
+<!-- Định nghĩa các view -->
+        <record id="view_product_form" model="ir.ui.view">
+            <field name="name">product.form</field>
+            <field name="model">my_wms.product</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="%(module-warehouse.action_product_update_wizard)d" string="Update" type="action" class="btn-primary"/>
+                        <button name="%(module-warehouse.action_product_report)d" string="Print Report" type="action" class="btn-secondary"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="MaSanPham"/>
+                            <field name="LoaiSanPham"/>
+                            <field name="TenSanPham"/>
+                            <field name="DonViTinh" context="{'tree_view_ref': 'unit_of_measure_view_tree'}"/>
+                            <field name="GhiChu"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_product_tree" model="ir.ui.view">
+            <field name="name">product.tree</field>
+            <field name="model">my_wms.product</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="MaSanPham"/>
+                    <field name="LoaiSanPham"/>
+                    <field name="TenSanPham"/>
+                    <field name="DonViTinh"/>
+                    <field name="GhiChu"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_product_list" model="ir.actions.act_window">
+            <field name="name">Products</field>
+            <field name="res_model">my_wms.product</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

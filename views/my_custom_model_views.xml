@@ -1,0 +1,49 @@
+<odoo>
+
+    <record id="view_my_custom_model_tree" model="ir.ui.view">
+        <field name="name">My Custom Model Tree View</field>
+        <field name="model">my_wms.custom</field>
+        <field name="arch" type="xml">
+            <tree string="My Custom Model">
+                <field name="Ten"/>
+                <field name="GhiChu"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="view_my_custom_model_form" model="ir.ui.view">
+        <field name="name">My Custom Model Form View</field>
+        <field name="model">my_wms.custom</field>
+        <field name="arch" type="xml">
+            <form string="My Custom Model">
+                <sheet>
+                    <group>
+                        <field name="Ten"/>
+                        <field name="GhiChu"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_my_custom_model_search" model="ir.ui.view">
+        <field name="name">My Custom Model Search View</field>
+        <field name="model">my_wms.custom</field>
+        <field name="arch" type="xml">
+            <search string="Search My Custom Model">
+                <filter string="Name" name="name_filter" domain="[('Ten', 'like', self)]"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="action_my_custom_model" model="ir.actions.act_window">
+        <field name="name">My Custom Model</field>
+        <field name="res_model">my_wms.custom</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_my_custom_model_tree"/>
+    </record>
+
+</odoo>

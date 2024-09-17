@@ -1,0 +1,55 @@
+<odoo>
+
+    <record id="view_location_tree" model="ir.ui.view">
+        <field name="name">warehouse.location.tree</field>
+        <field name="model">my_wms.location</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="MaViTri"/>
+                <field name="TenViTri"/>
+                <field name="DayKe"/>
+                <field name="Tang"/>
+                <field name="GhiChu"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="view_location_form" model="ir.ui.view">
+        <field name="name">warehouse.location.form</field>
+        <field name="model">my_wms.location</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="MaViTri"/>
+                    <field name="TenViTri"/>
+                    <field name="DayKe"/>
+                    <field name="Tang"/>
+                    <field name="GhiChu"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_location_search" model="ir.ui.view">
+        <field name="name">warehouse.location.search</field>
+        <field name="model">my_wms.location</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="MaViTri"/>
+                <field name="TenViTri"/>
+                <field name="DayKe"/>
+                <field name="Tang"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="action_location" model="ir.actions.act_window">
+        <field name="name">Locations</field>
+        <field name="res_model">my_wms.location</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_location_search"/>
+    </record>
+</odoo>

@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+        <!-- Dashboard dạng Kanban -->
+        <record id="view_dashboard_kanban" model="ir.ui.view">
+            <field name="name">dashboard.overview.kanban</field>
+            <field name="model">dashboard.overview</field>
+            <field name="arch" type="xml">
+                <kanban create="false">
+                    <field name="name"/>
+                    <field name="count"/>
+                    <field name="type"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                <div class="o_kanban_card">
+                                    <div class="oe_title">
+                                        <h2><t t-esc="record.name.value"/></h2>
+                                    </div>
+                                    <div class="o_kanban_details">
+                                        <span class="badge o_badge_primary">
+                                            <t t-esc="record.count.value"/> ITEMS
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- action mở dashboard -->
+        <record id="action_dashboard_overview" model="ir.actions.act_window">
+            <field name="name">Dashboard</field>
+            <field name="res_model">dashboard.overview</field>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="view_dashboard_kanban"/>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

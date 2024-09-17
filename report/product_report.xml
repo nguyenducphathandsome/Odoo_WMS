@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <!-- Định nghĩa mẫu báo cáo -->
+        <template id="report_product_template">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Product Report</h2>
+                        <table class="table table-sm">
+                            <tr>
+                                <td><strong>Mã Sản Phẩm:</strong></td>
+                                <td><t t-foreach="docs" t-as="doc">
+                                    <t t-esc="doc.MaSanPham or ''"/>
+                                </t></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tên Sản Phẩm:</strong></td>
+                                <td><t t-foreach="docs" t-as="doc">
+                                    <t t-esc="doc.TenSanPham or ''"/>
+                                </t></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Loại Sản Phẩm:</strong></td>
+                                <td><t t-foreach="docs" t-as="doc">
+                                    <t t-esc="doc.LoaiSanPham or ''"/>
+                                </t></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Đơn Vị Tính:</strong></td>
+                                <td><t t-foreach="docs" t-as="doc">
+                                    <t t-esc="doc.DonViTinh or ''"/>
+                                </t></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ghi Chú:</strong></td>
+                                <td><t t-foreach="docs" t-as="doc">
+                                    <t t-esc="doc.GhiChu or ''"/>
+                                </t></td>
+                            </tr>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <!-- Định nghĩa hành động báo cáo -->
+        <record id="action_product_report" model="ir.actions.report">
+            <field name="name">Product Report</field>
+            <field name="model">my_wms.product</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">module-warehouse.report_product_template</field>
+            <field name="print_report_name">'Product Report - %s' % (object.MaSanPham or '')</field>
+        </record>
+    </data>
+</odoo>

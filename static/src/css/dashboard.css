@@ -1,0 +1,27 @@
+/* file: static/src/css/dashboard.css */
+
+.oe_kanban_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    height: 150px;
+}
+
+.oe_title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.o_badge_primary {
+    background-color: #6c757d;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+}

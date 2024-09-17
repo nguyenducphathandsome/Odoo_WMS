@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <!-- menu root -->
+        <menuitem id="wms_menu_root" name="My WMS" action="action_dashboard_overview" sequence="1"/>
+
+        <menuitem id="wms_dashboard_menu" name="Dashboard" parent="wms_menu_root" action="action_dashboard_overview" sequence="5"/>
+
+        <menuitem id="wms_master_data" name="Master Data" parent="wms_menu_root" sequence="10"/>
+        <menuitem id="wms_master_data_1" name="Unit of Measure" parent="wms_master_data" action="unit_of_measure_action" sequence="100"/>
+        <menuitem id="wms_master_data_2" name="Product" parent="wms_master_data" action="action_product_list" sequence="110"/>
+        <menuitem id="wms_master_data_3" name="Product Type" parent="wms_master_data" action="product_type_action" sequence="120"/>
+        <menuitem id="wms_master_data_5" name="Stock" parent="wms_master_data" action="action_my_custom_model_inherit" sequence="140"/>
+        <menuitem id="wms_master_data_6" name="Supplier" parent="wms_master_data" action="action_supplier" sequence="150"/>
+        <menuitem id="wms_master_data_7" name="Location" parent="wms_master_data" action="action_location" sequence="160"/>
+        <menuitem id="wms_master_data_8" name="Wizard" parent="wms_master_data" action="module-warehouse.action_my_wizard" sequence="170"/>
+<!--        <menuitem id="wms_master_data_9" name="Product Page" parent="wms_master_data" action="action_product_page" sequence="180"/>-->
+    </data>
+</odoo>

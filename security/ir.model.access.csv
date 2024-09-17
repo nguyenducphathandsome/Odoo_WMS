@@ -1,0 +1,3 @@
+# Quyền truy cập cho mô hình dashboard.overview
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dashboard_overview_user,access_dashboard_overview_user,model_dashboard_overview,base.group_user,1,1,1,1

@@ -1,0 +1,50 @@
+<odoo>
+    <record id="view_supplier_tree" model="ir.ui.view">
+        <field name="name">supplier.tree</field>
+        <field name="model">my_wms.supplier</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="MaNhaCungCap"/>
+                <field name="TenNhaCungCap"/>
+                <field name="Email"/>
+                <field name="DienThoai"/>
+                <field name="GhiChu"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_supplier_form" model="ir.ui.view">
+        <field name="name">supplier.form</field>
+        <field name="model">my_wms.supplier</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="MaNhaCungCap"/>
+                    <field name="TenNhaCungCap"/>
+                    <field name="Email"/>
+                    <field name="DienThoai"/>
+                    <field name="GhiChu"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_supplier_search" model="ir.ui.view">
+        <field name="name">supplier.search</field>
+        <field name="model">my_wms.supplier</field>
+        <field name="arch" type="xml">
+            <search>
+                    <field name="MaNhaCungCap"/>
+                    <field name="TenNhaCungCap"/>
+                    <field name="Email"/>
+                    <field name="DienThoai"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_supplier" model="ir.actions.act_window">
+        <field name="name">Supplier</field>
+        <field name="res_model">my_wms.supplier</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

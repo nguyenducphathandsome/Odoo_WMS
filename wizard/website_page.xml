@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <!-- Define the page template -->
+        <template id="product_page_template">
+            <t t-call="website.layout">
+                <link rel="stylesheet" href="/module-warehouse/static/src/css/custom_styles.css"/>
+                <div class="container">
+                    <h1>Product Information</h1>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <t t-foreach="products" t-as="product">
+                                <div class="product">
+                                    <h2><t t-esc="product.TenSanPham"/></h2>
+                                    <p><strong>Code:</strong> <t t-esc="product.MaSanPham"/></p>
+                                    <p><strong>Type:</strong> <t t-esc="product.LoaiSanPham.name"/></p>
+                                    <p><strong>Unit:</strong> <t t-esc="product.DonViTinh.name"/></p>
+                                    <p><strong>Description:</strong> <t t-esc="product.GhiChu"/></p>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <!-- Define the website page -->
+        <record id="website_product_page" model="website.page">
+            <field name="name">Product Page</field>
+            <field name="url">/product_page</field>
+            <field name="view_id" ref="module-warehouse.product_page_template"/>
+        </record>
+    </data>
+</odoo>

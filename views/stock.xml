@@ -1,0 +1,54 @@
+<odoo>
+    <record id="view_my_custom_model_form_inherit" model="ir.ui.view">
+        <field name="name">My Custom Model Form View (Inherited)</field>
+        <field name="model">my_wms.custom</field>
+        <field name="inherit_id" ref="module-warehouse.view_my_custom_model_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group>
+                    <field name="MaKho"/>
+                    <field name="DiaChi"/>
+                    <field name="DienThoai"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_my_custom_model_tree_inherit" model="ir.ui.view">
+        <field name="name">My Custom Model Tree View (Inherited)</field>
+        <field name="model">my_wms.custom</field>
+        <field name="inherit_id" ref="module-warehouse.view_my_custom_model_tree"/> <!-- Ensure this is correct -->
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+                <field name="MaKho"/>
+                <field name="DiaChi"/>
+                <field name="DienThoai"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_my_custom_model_search_inherit" model="ir.ui.view">
+        <field name="name">My Custom Model Search View (Inherited)</field>
+        <field name="model">my_wms.custom</field>
+        <field name="inherit_id" ref="module-warehouse.view_my_custom_model_search"/> <!-- Ensure this is correct -->
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <field name="MaKho"/>
+                <field name="DiaChi"/>
+                <field name="DienThoai"/>
+            </xpath>
+        </field>
+    </record>
+    <odoo>
+
+    <record id="action_my_custom_model_inherit" model="ir.actions.act_window">
+        <field name="name">My Custom Model</field>
+        <field name="res_model">my_wms.custom</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_my_custom_model_tree_inherit"/> <!-- Ensure this view ID exists -->
+    </record>
+</odoo>
+
+</odoo>
